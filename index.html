@@ -86,6 +86,9 @@
         import { Capa } from './resources/game/cenas/Capa.js';
         import { Intro } from './resources/game/cenas/Intro.js';
         import { Game } from './resources/game/cenas/Game.js';
+        import { Menu } from './resources/game/cenas/Menu.js';
+        import { Game2 } from './resources/game/cenas/Game2.js';
+        import { Game3 } from './resources/game/cenas/Game3.js';
         import { ControladorDeCenas } from './resources/js/library/managers/ControladorDeCenas.js';
         import SoundManager from './resources/js/library/managers/SoundManager.js';
 
@@ -103,7 +106,7 @@
                 autoRound: true,
                 expandParent: true
             },
-            scene: [Boot, Preload, Capa,Intro, Game],
+            scene: [Boot, Preload, Capa, Intro, Game, Menu, Game2, Game3],
             audio: {
                 disableWebAudio: false
             },
@@ -127,7 +130,10 @@
         const cenas = [
             { key: 'Capa', scene: new Capa(null) },
             { key: 'Intro', scene: new Intro(null) },
-            { key: 'Game', scene: new Game(null) }
+            { key: 'Game', scene: new Game(null) },
+            { key: 'Menu', scene: new Menu(null) },
+            { key: 'Game2', scene: new Game2(null) },
+            { key: 'Game3', scene: new Game3(null) }
         ];
 
         // Cria o controlador

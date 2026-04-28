@@ -22,7 +22,7 @@ export class Capa extends BaseCena {
         });
 
         btIniciar.x = background.x + (background.width - btIniciar.width) / 2;
-        btIniciar.y = 782;
+        btIniciar.y = 890;
 
         btIniciar.on('buttonClick', () => {
            this.controladorDeCenas.proximaCena();

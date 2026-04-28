@@ -3,24 +3,24 @@
         "marca": "SAE",
         "codigo": "ARCO",
         "musica": {
-            "src": "Bossa_Antigua.mp3",
+            "src": "Pleasant_Porridge.mp3",
             "volume": 0.25
         }
     },
     "creditos": [
         {
             "titulo": "Créditos de Imagem",
-            "texto": "upklyak/freepik.com; \nImagem gerada por IA/Adobe Firefly."
+            "texto": "freepik/freepik.com; \nImagem gerada por IA/Gemini; Mateus Remor."
         },
         {
             "titulo": "Créditos de SOM",
-            "texto": "\"Bossa Antigua\"  Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
+            "texto": "\"Pleasant Porridge\"  Kevin MacLeod CC BY 4.0 /incompetech.com; ElevenLabs/voz e efeitos sonoros gerados por Inteligência Artificial"
         }
     ],
     "orientacaoMetodologica": [
         {
             "titulo": "ORIENTAÇÃO METODOLÓGICA",
-            "texto": ""
+            "texto": "Professor(a), este ODA é uma ferramenta poderosa para engajar seus alunos na intersecção entre arte e tecnologia. Sugira que, antes de iniciar a atividade, os alunos conversem sobre como as imagens podem contar histórias sem palavras, explorando exemplos do cotidiano ou de obras de arte. Incentive-os a pensar em sentimentos e ideias que podem ser transmitidos por cores, luzes e objetos. Durante a atividade, estimule a experimentação e a criatividade, lembrando-os de que não há \"certo\" ou \"errado\" na expressão artística. Após a conclusão, promova uma roda de conversa onde cada aluno possa apresentar sua narrativa visual, explicando suas escolhas e o que desejou expressar. Valorize a diversidade de interpretações e a originalidade de cada criação, reforçando que a arte é uma forma única de comunicação e expressão pessoal. Sugestão para despertar o pensamento computacional dos alunos: Para alunos do Ensino Médio, o professor pode expandir a atividade propondo que analisem a estrutura narrativa de filmes ou séries, decompondo-as em cenas e identificando padrões visuais e textuais que criam emoção ou suspense. Em seguida, podem ser desafiados a criar um \"algoritmo\" visual para uma história, definindo uma sequência lógica de filtros, elementos e textos para evocar uma emoção específica ou transmitir uma mensagem complexa. Por exemplo, como usar uma sequência de imagens e textos para representar a passagem do tempo ou a evolução de um sentimento. Isso estimula a abstração de conceitos artísticos em etapas lógicas e a organização de informações de forma estruturada, aplicando o pensamento computacional na criação de narrativas visuais mais elaboradas, sem a necessidade de codificação."
         }
     ],
     "paginas": [

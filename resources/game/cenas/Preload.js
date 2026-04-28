@@ -5,7 +5,7 @@ export class Preload extends Phaser.Scene {
 
     preload() {
         // Efeitos sonoros
-        this.load.audio('musica', 'resources/game/sounds/Bossa_Antigua.mp3');
+        this.load.audio('musica', 'resources/game/sounds/Pleasant_Porridge.mp3');
         this.load.audio('click', 'resources/game/sounds/click.mp3');
         this.load.audio('acerto', 'resources/game/sounds/acerto.mp3');
         this.load.audio('erro', 'resources/game/sounds/erro.mp3'); 

@@ -459,6 +459,18 @@ export class Game2 extends BaseCena {
                 }
             ]
         });
+
+        this.modals.error = this.createModal({
+            texture: 'feedbackErroFase2',
+            buttons: [
+                {
+                    text: 'TENTAR NOVAMENTE',
+                    onClick: () => {
+                        this.hideModal('error');
+                    }
+                }
+            ]
+        });
     }
 
     createModal({ texture, buttons }) {
@@ -506,8 +518,25 @@ export class Game2 extends BaseCena {
     }
 
     handleFinishButtonClick() {
+        if (!this.hasPhotoEdits()) {
+            this.showModal('error');
+            return;
+        }
+
         this.saveEditedPhotoState();
         this.showModal('success');
+    }
+
+    hasPhotoEdits() {
+        if (this.selectedFilterKey !== 'default') {
+            return true;
+        }
+
+        if (this.selectedLightKey !== 'none') {
+            return true;
+        }
+
+        return this.getEditedElementState(this.getEditableImageBounds()).length > 0;
     }
 
     saveEditedPhotoState() {
@@ -614,6 +643,12 @@ export class Game2 extends BaseCena {
         const modal = this.modals[key];
         if (!modal) {
             return;
+        }
+
+        if (key === 'success') {
+            SoundManager.play('acerto');
+        } else if (key === 'error') {
+            SoundManager.play('erro');
         }
 
         modal.overlay.setVisible(true);

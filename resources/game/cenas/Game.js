@@ -337,6 +337,12 @@ export class Game extends BaseCena {
             return;
         }
 
+        if (key === 'success') {
+            SoundManager.play('acerto');
+        } else if (key === 'error') {
+            SoundManager.play('erro');
+        }
+
         modal.overlay.setVisible(true);
         modal.overlay.setActive(true);
     }

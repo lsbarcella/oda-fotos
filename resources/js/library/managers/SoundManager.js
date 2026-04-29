@@ -59,6 +59,34 @@ class SoundManager {
     }
 
     // Método para tocar um som
+    static ensureAudioReady() {
+        if (!this.game || !this.game.sound) {
+            return;
+        }
+
+        try {
+            const soundManager = this.game.sound;
+
+            if (
+                soundManager.context
+                && soundManager.context.state === 'suspended'
+                && typeof soundManager.context.resume === 'function'
+            ) {
+                const resumeResult = soundManager.context.resume();
+
+                if (resumeResult && typeof resumeResult.catch === 'function') {
+                    resumeResult.catch(() => {});
+                }
+            }
+
+            if (typeof soundManager.unlock === 'function') {
+                soundManager.unlock();
+            }
+        } catch (error) {
+            console.error('Erro ao preparar contexto de Ã¡udio:', error);
+        }
+    }
+
     static play(key, volume = 1.0, loop = false, onComplete = null) {
         if (!this.game || !this.game.sound) return null;
 
@@ -69,17 +97,52 @@ class SoundManager {
                 this.saveVolumeSettings();
             }
 
+            this.ensureAudioReady();
+
             const sound = this.game.sound.add(key, {
                 volume: this.isMuted ? 0 : volume,
                 loop: loop
             });
 
-            if (onComplete && typeof onComplete === 'function') {
-                sound.once('complete', onComplete);
+            this.soundEffects.push(sound);
+
+            let cleaned = false;
+            const cleanup = () => {
+                if (cleaned) {
+                    return;
+                }
+
+                cleaned = true;
+
+                const index = this.soundEffects.indexOf(sound);
+                if (index > -1) {
+                    this.soundEffects.splice(index, 1);
+                }
+            };
+
+            sound.once('complete', () => {
+                cleanup();
+
+                if (onComplete && typeof onComplete === 'function') {
+                    onComplete();
+                }
+            });
+            sound.once('stop', cleanup);
+            sound.once('destroy', cleanup);
+
+            const played = sound.play();
+
+            if (played === false && typeof window !== 'undefined') {
+                window.setTimeout(() => {
+                    try {
+                        this.ensureAudioReady();
+                        sound.play();
+                    } catch (retryError) {
+                        console.error('Erro ao tentar tocar som novamente:', retryError);
+                    }
+                }, 80);
             }
 
-            sound.play();
-            this.soundEffects.push(sound);
             return sound;
         } catch (error) {
             console.error('Erro ao tocar som:', error);

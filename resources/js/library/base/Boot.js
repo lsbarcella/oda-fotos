@@ -22,6 +22,9 @@ export class Boot extends Phaser.Scene {
         this.load.image('alternativasContainerActive', './resources/images/alternativas/container-active.png');
         this.load.image('alternativasContainer', './resources/images/alternativas/container.png');
         this.load.image('alternativasDText', './resources/images/alternativas/d-text.png');
+        this.load.image('alternativasEraUmaVezText', './resources/images/alternativas/era-umavez.png');
+        this.load.image('alternativasRelatividadeText', './resources/images/alternativas/relatividade.png');
+        this.load.image('alternativasSegredoText', './resources/images/alternativas/segredo.png');
 
         // BUTTONS
         this.load.image('buttonsContainer', './resources/images/buttons/container.png');
@@ -46,6 +49,7 @@ export class Boot extends Phaser.Scene {
         // JOGOS
         this.load.image('jogosFase1', './resources/images/jogos/fase-1.png');
         this.load.image('jogosFase2', './resources/images/jogos/fase-2.png');
+        this.load.image('jogosFase3Pt2', './resources/images/jogos/fase-3-pt-2.png');
         this.load.image('jogosFase3Escreva', './resources/images/jogos/fase-3-escreva.png');
         this.load.image('jogosFase3Frases', './resources/images/jogos/fase-3-frases.png');
         this.load.image('jogosFase3', './resources/images/jogos/fase-3.png');
@@ -130,6 +134,19 @@ export class Boot extends Phaser.Scene {
         this.load.image('menuFotoCasa', './resources/images/menu/foto-casa.png');
         this.load.image('menuFotoCriancas', './resources/images/menu/foto-criancas.png');
         this.load.image('menuFotoGato', './resources/images/menu/foto-gato.png');
+
+        // TECLADO
+        this.load.image('tecladoBg', './resources/images/teclado/bg.png');
+        this.load.image('tecladoBtApagar', './resources/images/teclado/bt-apagar.png');
+        this.load.image('tecladoBtApagarActive', './resources/images/teclado/bt-apagar-active.png');
+        this.load.image('tecladoBtConfirmar', './resources/images/teclado/bt_confirmar.png');
+        this.load.image('tecladoBtConfirmarActive', './resources/images/teclado/bt_confirmar-active.png');
+        this.load.image('tecladoBtEspaco', './resources/images/teclado/bt-espaco.png');
+        this.load.image('tecladoBtEspacoActive', './resources/images/teclado/bt-espaco-active.png');
+        this.load.image('tecladoCampoDeEscrita', './resources/images/teclado/campo-de-escrita.png');
+        this.load.image('tecladoTecla', './resources/images/teclado/tecla.png');
+        this.load.image('tecladoTeclaActive', './resources/images/teclado/tecla-active.png');
+        this.load.image('tecladoTecladoPreview', './resources/images/teclado/teclado-preview.png');
 
         this.load.image('btSoundOn', './resources/images/hud/btSonsNormal.png'); // Botão de som ligado
         this.load.image('btSoundOff', './resources/images/hud/btSonsMutado.png'); //
